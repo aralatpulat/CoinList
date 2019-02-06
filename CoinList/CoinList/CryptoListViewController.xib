@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CryptoListViewController" customModule="CryptoList" customModuleProvider="target">
+            <connections>
+                <outlet property="cryptoTableView" destination="mEE-rl-BiQ" id="gGU-ZP-jjj"/>
+                <outlet property="view" destination="iN0-l3-epB" id="jI9-7Z-nXi"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mEE-rl-BiQ">
+                    <rect key="frame" x="0.0" y="20" width="375" height="627"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="WLW-sQ-dtz"/>
+                        <outlet property="delegate" destination="-1" id="CGk-Uz-BKL"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mEE-rl-BiQ" secondAttribute="trailing" id="BGx-VW-gxi"/>
+                <constraint firstItem="mEE-rl-BiQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Hql-Lq-K2i"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mEE-rl-BiQ" secondAttribute="trailing" id="LSB-eY-YW5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="mEE-rl-BiQ" secondAttribute="bottom" constant="20" id="Ob0-QW-EWN"/>
+                <constraint firstItem="mEE-rl-BiQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="sB9-Ox-Xti"/>
+                <constraint firstItem="mEE-rl-BiQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zVw-7R-hd6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="39.200000000000003" y="46.326836581709152"/>
+        </view>
+    </objects>
+</document>
