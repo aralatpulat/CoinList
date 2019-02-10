@@ -8,12 +8,12 @@
 
 import Foundation
 
-class APICLient {
+class APIClient {
     
     var apiEngine: APIEngine
     
-    init(){
-        self.apiEngine = APIEngine()
+    init(_ apiEngine: APIEngine){
+        self.apiEngine = apiEngine
     }
     
     func getCoinList(completion: @escaping ([Coin], Error?) -> Void ) {
