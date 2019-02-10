@@ -8,9 +8,13 @@
 
 import Foundation
 
-class CryptoListViewModel {
+class CoinListViewModel {
     
-    let apiClient: APICLient = APICLient()
+    let apiClient: APIClient
+    
+    init(_ apiClient: APIClient) {
+        self.apiClient = apiClient
+    }
     
     func getCoins(completion: @escaping ([Coin]) -> Void ) {
         apiClient.getCoinList{ (data, error) in
