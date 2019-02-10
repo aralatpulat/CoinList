@@ -10,7 +10,11 @@ import Foundation
 
 class CoinDetailViewModel{
     
-    let apiClient = APICLient()
+    let apiClient: APIClient
+    
+    init(_ apiClient: APIClient) {
+        self.apiClient = apiClient
+    }
     
     func detailApiCall(id: String, completion: @escaping (CoinDetail) -> () ) {
         apiClient.getCoinDetail(id: id) { (data, error) in
