@@ -12,15 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var rootViewController: UINavigationController!
+    var coordinator: Coordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        let viewModel = CryptoListViewModel()
-        rootViewController = UINavigationController(rootViewController: CryptoListViewController(viewModel: viewModel))
-        window?.rootViewController = rootViewController
-        window?.makeKeyAndVisible()
+        coordinator = Coordinator()
+        coordinator?.openCoinList(window: window)
         return true
     }
 }
