@@ -11,7 +11,6 @@ import UIKit
 class CoinListViewController: UIViewController {
     
     @IBOutlet weak var coinTableView: UITableView!
-    var coins: [Coin] = []
     var viewModel: CoinListViewModel!
     var coordinator: Coordinator?
     
@@ -34,8 +33,7 @@ class CoinListViewController: UIViewController {
     
     func apiCall(){
         setLoading()
-        viewModel.getCoins{ [weak self] (coins) in
-            self?.coins = coins
+        viewModel.getCoins { [weak self] () in
             DispatchQueue.main.async {
                 self?.coinTableView.reloadData()
                 self?.removeLoading()
@@ -46,20 +44,24 @@ class CoinListViewController: UIViewController {
 
 extension CoinListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return coins.count
+        return viewModel.getCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let coin = coins[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "CoinCell") as! CoinCell
-        cell.setup(coin: coin)
-        cell.priceLabel.textAlignment = .right
+        
+        if let coin = viewModel.getCoin(index: indexPath.row) {
+            cell.setup(coin: coin)
+            cell.priceLabel.textAlignment = .right
+        }        
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
-        let id = coins[indexPath.row].id
-        coordinator?.openCoinDetail(of: id, vc: self)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let coin = viewModel.getCoin(index: indexPath.row) {
+            let id = coin.id
+            coordinator?.openCoinDetail(of: id, vc: self)
+        }
     }
 }
 
