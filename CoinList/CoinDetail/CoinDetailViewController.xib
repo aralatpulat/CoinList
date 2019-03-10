@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CoinDetailViewController" customModule="CryptoList" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CoinDetailViewController" customModule="CoinList" customModuleProvider="target">
             <connections>
                 <outlet property="currentPriceLabel" destination="LiO-f3-VXN" id="4cn-aW-8zR"/>
                 <outlet property="currentView" destination="uSb-Gj-XEA" id="gGh-m0-pdb"/>
@@ -36,14 +36,20 @@
                         <constraint firstAttribute="height" constant="75" id="tIs-YR-05l"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqL-6U-3Nc" userLabel="Symbol Label">
-                    <rect key="frame" x="207" y="143" width="0.0" height="0.0"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqL-6U-3Nc" userLabel="Symbol Label">
+                    <rect key="frame" x="204.5" y="143" width="5.5" height="29"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSb-Gj-XEA" userLabel="Current View" customClass="CardView" customModule="CryptoList" customModuleProvider="target">
-                    <rect key="frame" x="16" y="167" width="382" height="100"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqT-bP-wTG" userLabel="Name Label">
+                    <rect key="frame" x="205" y="180" width="4" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSb-Gj-XEA" userLabel="Current View" customClass="CardView" customModule="CoinList" customModuleProvider="target">
+                    <rect key="frame" x="16" y="214" width="382" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dU-OZ-zbc" userLabel="Current Price Label">
                             <rect key="frame" x="8" y="16" width="366" height="18"/>
@@ -89,14 +95,8 @@
                         <constraint firstItem="A1N-rI-azY" firstAttribute="top" secondItem="5dU-OZ-zbc" secondAttribute="bottom" constant="8" id="yN0-az-qD4"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqT-bP-wTG" userLabel="Name Label">
-                    <rect key="frame" x="207" y="151" width="0.0" height="0.0"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="033-B7-tCG" customClass="CardView" customModule="CryptoList" customModuleProvider="target">
-                    <rect key="frame" x="16" y="275" width="187" height="100"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="033-B7-tCG" customClass="CardView" customModule="CoinList" customModuleProvider="target">
+                    <rect key="frame" x="16" y="322" width="187" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYo-By-Av6" userLabel="Lowest Label">
                             <rect key="frame" x="8" y="42" width="171" height="0.0"/>
@@ -122,8 +122,8 @@
                         <constraint firstItem="ZXj-Mq-94L" firstAttribute="top" secondItem="033-B7-tCG" secondAttribute="top" constant="8" id="hgS-Tm-lzx"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Av6-fE-0Qb" customClass="CardView" customModule="CryptoList" customModuleProvider="target">
-                    <rect key="frame" x="211" y="275" width="187" height="100"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Av6-fE-0Qb" customClass="CardView" customModule="CoinList" customModuleProvider="target">
+                    <rect key="frame" x="211" y="322" width="187" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDI-2I-1jS" userLabel="Highest Label">
                             <rect key="frame" x="8" y="42" width="171" height="0.0"/>
