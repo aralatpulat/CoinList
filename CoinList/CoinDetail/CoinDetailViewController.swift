@@ -22,13 +22,10 @@ class CoinDetailViewController: UIViewController {
     @IBOutlet weak var currentView: UIView!
     
     var viewModel: CoinDetailViewModel!
-    var id: String!
-    var coinDetail: CoinDetail?
     
-    convenience init(viewModel: CoinDetailViewModel, id: String){
+    convenience init(viewModel: CoinDetailViewModel){
         self.init()
         self.viewModel = viewModel
-        self.id = id
     }
     
     override func viewDidLoad() {
@@ -39,7 +36,7 @@ class CoinDetailViewController: UIViewController {
     
     private func getCoinDetail(){
         setLoading()
-        viewModel.detailApiCall(id: id, completion:  { [weak self]
+        viewModel.detailApiCall(completion:  { [weak self]
             (coinDetail) in
             self?.getImage(imgUrl: coinDetail.image)
             DispatchQueue.main.async {
