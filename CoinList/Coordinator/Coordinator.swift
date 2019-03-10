@@ -29,8 +29,8 @@ class Coordinator{
     
     
     func openCoinDetail(of coinId: String, vc: CoinListViewController){
-        let coinDetailViewModel = CoinDetailViewModel(apiClient)
-        let coinDetailViewController = CoinDetailViewController(viewModel: coinDetailViewModel, id: coinId)
+        let coinDetailViewModel = CoinDetailViewModel(apiClient, id: coinId)
+        let coinDetailViewController = CoinDetailViewController(viewModel: coinDetailViewModel)
         vc.show(coinDetailViewController, sender: nil)
     }
 }
